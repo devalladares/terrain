@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Three.js Sketches</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    header {
+      padding: 0.5rem;
+      background-color: #000000;
+    }
+    #sketchSelector {
+      /* font-size: 1rem; */
+      /* padding: 0.3rem; */
+    }
+    iframe {
+      width: 100%;
+      height: calc(100vh - 40px); /* adjust for the header height */
+      border: 0;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <select id="sketchSelector">
+      <option value="sketch1/index.html" selected>Sketch 1</option>
+      <!-- <option value="sketch2/index.html">Sketch 2</option> -->
+      <option value="sketch3/index.html">Sketch 3</option>
+      <option value="sketch4/index.html">Sketch 4</option>
+      <option value="sketch5/index.html">Sketch 5</option>
+    </select>
+  </header>
+
+  <!-- Default to sketch 1 here -->
+  <iframe id="sketchFrame" src="sketch1/index.html" title="Sketch Preview"></iframe>
+  
+
+  <script>
+    const selector = document.getElementById('sketchSelector');
+    const sketchFrame = document.getElementById('sketchFrame');
+
+    selector.addEventListener('change', () => {
+      const sketchPath = selector.value;
+      if (sketchPath) {
+        sketchFrame.src = sketchPath;
+      }
+    });
+  </script>
+</body>
+</html>
