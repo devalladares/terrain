@@ -1,4 +1,4 @@
-const DEFAULT_SKETCH_NUMBER = 42
+const DEFAULT_SKETCH_NUMBER = 1
 
 let currentP5 = null; // Holds the current p5 instance
 
