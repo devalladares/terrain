@@ -14,7 +14,7 @@ const SKETCHES = [
     { name: 'sketch6.1', label: 'Sketch 6.1', group: 'Group' },
     { name: 'sketch6.2', label: 'Sketch 6.2', group: 'Group' },
     { name: 'sketch6.3', label: 'Sketch 6.3', group: 'Group' },
-    { name: 'sketch6.4', label: 'Sketch 6.4', group: 'Group' },
+    { name: 'sketch6.4', label: 'Sketch 6.4 Scroll to Zoom', group: 'Group' },
     { name: 'sketch6.5', label: 'Sketch 6.5', group: 'Group' }, 
 ];
 
