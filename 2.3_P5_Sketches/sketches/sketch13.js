@@ -1,61 +1,3 @@
-let layers = 150; // Number of line layers
-let resolution = 250; // Number of points per line
-let noiseScale = 0.005; // Base scale for Perlin noise
-let time = 0; // Time variable for animation
-
-let layerSpeed = []; // Array to store individual layer speeds
-let layerNoiseScale = []; // Array to store individual layer noise scales
-
-function setup() {
-  createCanvas(windowWidth, windowHeight, WEBGL);
-  background('#003323'); // Dark background
-  strokeWeight(1);
-  blendMode(ADD); // Additive blending for glowing effect
-  
-  // Initialize varying speeds and noise scales for each layer
-  for (let i = 0; i < layers; i++) {
-    layerSpeed.push(random(0.001, 0.004)); // Random speed between 0.001 and 0.004
-    layerNoiseScale.push(random(0.004, 0.007)); // Random noise scale between 0.004 and 0.007
-  }
-}
-
-function draw() {
-  background('white'); // Slightly more opaque background for better glow
-  
-  // Apply subtle rotation based on mouse position
-  rotateX(map(mouseY, 0, height, -0.3, 0.3));
-  rotateY(map(mouseX, 0, width, -0.3, 0.3));
-  
-  translate(-width / 2, -height / 2, 0); // Center the grid
-  
-  // Draw each layer of lines
-  for (let i = 0; i < layers; i++) {
-    beginShape();
-    noFill();
-    
-    for (let j = 0; j < resolution; j++) {
-      let x = j * (width / resolution);
-      let y = i * (height / layers);
-      let z = noise((x + time * layerSpeed[i]) * layerNoiseScale[i], 
-                   (y + time * layerSpeed[i]) * layerNoiseScale[i]) * 200;
-      
-      // Map Z position to alpha for depth-based transparency
-      let alpha = map(z, 0, 200, 150, 50);
-      stroke(255, alpha); // White lines with varying transparency
-      
-      vertex(x, y, z);
-    }
-    endShape();
-  }
-  
-  time += 1; // Increment time for animation
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
-// sketches/sketch_topo.js
-
 export default function(p) {
     // 1) Tweakable Config:
 
@@ -77,9 +19,9 @@ export default function(p) {
     const BIAS_VECTOR_Y = 0.0;
 
     // ---- Visual/Theme Settings ----
-    // Feel free to add more shades of gray/white if you’d like variation
-    const BRAND_PALETTE_LIGHT = ["#999999", "#CCCCCC"]; 
-    const BRAND_PALETTE_DARK  = ["#FFFFFF", "#AAAAAA"]; 
+    // Updated palettes to use #4CB944
+    const BRAND_PALETTE_LIGHT = ["#4CB944", "#66D16F"]; 
+    const BRAND_PALETTE_DARK  = ["#4CB944", "#66D16F"]; 
 
     // For simplicity, we’ll default to dark mode here. You can switch it in p.setMode().
     let currentPalette = BRAND_PALETTE_DARK; 
@@ -245,4 +187,4 @@ export default function(p) {
         c.setAlpha(alphaVal);
         return c;
     }
-} 
+}
