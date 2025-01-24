@@ -9,7 +9,6 @@ const SKETCHES = [
     { name: 'sketch1', label: 'Sketch 1', group: 'Integration Test' },
     { name: 'sketch2', label: 'Sketch 2', group: 'Integration Test' },
     { name: 'sketch3', label: 'Sketch 3 Click and drag to draw', group: 'Integration Test' },
-    { name: 'sketch4', label: 'Sketch 4', group: 'Group' },
     { name: 'sketch5', label: 'Sketch 5', group: 'Group' },
     { name: 'sketch6', label: 'Sketch 6 Click and drag', group: 'Group' },
     { name: 'sketch6.1', label: 'Sketch 6.1', group: 'Group' },
