@@ -1,24 +1,22 @@
 // main.js
 
-const DEFAULT_SKETCH_NUMBER = 6.6
+const DEFAULT_SKETCH_NUMBER = 1
 
 let currentP5 = null; // Holds the current p5 instance
 let isDarkMode = false; // Tracks the current mode
 
 const SKETCHES = [
-    { name: 'sketch1', label: 'Sketch 1', group: 'Group' },
-    { name: 'sketch2', label: 'Sketch 2', group: 'Group' },
-    { name: 'sketch3', label: 'Sketch 3', group: 'Group' },
+    { name: 'sketch1', label: 'Sketch 1', group: 'Integration Test' },
+    { name: 'sketch2', label: 'Sketch 2', group: 'Integration Test' },
+    { name: 'sketch3', label: 'Sketch 3 Click and drag to draw', group: 'Integration Test' },
     { name: 'sketch4', label: 'Sketch 4', group: 'Group' },
     { name: 'sketch5', label: 'Sketch 5', group: 'Group' },
-    { name: 'sketch6', label: 'Sketch 6', group: 'Group' },
+    { name: 'sketch6', label: 'Sketch 6 Click and drag', group: 'Group' },
     { name: 'sketch6.1', label: 'Sketch 6.1', group: 'Group' },
     { name: 'sketch6.2', label: 'Sketch 6.2', group: 'Group' },
     { name: 'sketch6.3', label: 'Sketch 6.3', group: 'Group' },
     { name: 'sketch6.4', label: 'Sketch 6.4', group: 'Group' },
-    { name: 'sketch6.5', label: 'Sketch 6.5', group: 'Group' },
-    { name: 'sketch7', label: 'Sketch 7', group: 'Group' },
-    { name: 'sketch8', label: 'Sketch 8', group: 'Group' },
+    { name: 'sketch6.5', label: 'Sketch 6.5', group: 'Group' }, 
 ];
 
 /**
