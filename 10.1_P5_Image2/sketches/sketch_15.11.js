@@ -59,21 +59,17 @@ export default function adaptedSketchN(p) {
   let letterField = [];
 
   p.preload = () => {
-    // Load the custom font
-    customFont = p.loadFont('woff/FKGroteskMono-Medium.woff');
+    // Load the custom font and add console log
+    console.log('Loading font...');
+    customFont = p.loadFont('woff/FKGroteskMono-Medium.woff', 
+      // Success callback
+      () => console.log('Font loaded successfully!'),
+      // Error callback
+      (err) => console.error('Font loading error:', err)
+    );
   };
 
-  p.setup = () => {
-    const container = p.select('#sketch-container');
-    const containerWidth = container.width;
-    const containerHeight = container.height;
-
-    p.createCanvas(containerWidth, containerHeight).parent(container);
-    setupGUI();
-    resetSketch();
-  };
-
-  p.setup = () => {
+ p.setup = () => {
     const container = p.select('#sketch-container');
     const containerWidth = container.width;
     const containerHeight = container.height;
@@ -193,13 +189,12 @@ export default function adaptedSketchN(p) {
         p.fill(c);
         p.rect(x, y, cellWidth, cellHeight);
 
-        let letter = letters[Math.floor(Math.random() * letters.length)];
+       let letter = letters[Math.floor(Math.random() * letters.length)];
 
         p.fill(controls.textColor);
         p.textAlign(p.CENTER, p.CENTER);
         p.textSize(Math.min(cellWidth, cellHeight) * LETTER_SIZE_FACTOR);
-        p.textFont(customFont); // Changed from 'monospace' to customFont
-        p.textFont('monospace');
+        p.textFont(customFont); // Only set the font once
         p.text(letter, x + cellWidth / 2, y + cellHeight / 2);
       }
     }
