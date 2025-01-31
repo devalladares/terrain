@@ -2,7 +2,7 @@
 
 const CONFIG = {
     useLatestVersionByDefault: false,
-    manualDefaultVersion: 15.11
+    manualDefaultVersion: 15.12
 };
 
 // Define available sketches with updated structure
@@ -29,6 +29,7 @@ const SKETCHES = [
     { name: 'sketch_14.9', group: 'Testing' },
     { name: 'sketch_15.1', group: 'Testing' },
     { name: 'sketch_15.11', group: 'Testing' },
+    { name: 'sketch_15.12', group: 'Testing' },
     { name: 'sketch_15.2', group: 'Testing' },
     { name: 'sketch_15.3', group: 'Testing' },
     { name: 'sketch_16.1', group: 'Testing' },
