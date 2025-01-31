@@ -13,7 +13,7 @@ export default function adaptedSketchN(p) {
     strokeWeight: 1,
     strokeColor: '#000000',
     backgroundColor: '#FFFFFF',
-    useGaps: true,
+    useGaps: false,
     
     // Typography
     letterSizeFactor: 0.5,
