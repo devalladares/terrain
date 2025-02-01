@@ -1,0 +1,32 @@
+<!-- // index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RNA Sketch</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="controls">
+    <select id="sketchSelector">
+      <!-- <option value="">-- Select a Sketch --</option> -->
+    </select>
+    <label class="mockup-control">
+      <input type="checkbox" id="mockupToggle">
+      Mockup
+    </label>
+  </div>
+
+  <div class="image-container">
+    <img id="mockupImage" src="images/2.png" alt="Mockup">
+    <div id="sketch-container"></div>
+  </div>
+ 
+  <div id="loadingIndicator" style="display: none;">Loading sketch...</div>
+  
+  <script type="module" src="main.js"></script>
+</body>
+</html>
