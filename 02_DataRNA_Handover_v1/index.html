@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>RNA Animation</title>
@@ -8,13 +9,14 @@
   <style>
     /* Container styling */
     #rna-container {
-      width: 700px;
-      height: 500px;
+      width: 1400px;
+      height: 1000px;
       position: relative;
       overflow: hidden;
-      border: 1px solid #ccc;
+      /* border: 1px solid #ccc; */
       margin: 20px auto;
     }
+
     /* Ensure the canvas fills the container */
     #rna-container canvas {
       position: absolute;
@@ -25,6 +27,7 @@
     }
   </style>
 </head>
+
 <body>
   <div id="rna-container"></div>
   <script>
@@ -111,8 +114,8 @@
 
       // Returns the appropriate grid size depending on window width.
       function getGridSize() {
-        return p.windowWidth <= RNAConfig.mobileBreakpoint 
-          ? RNAConfig.mobileGridSize 
+        return p.windowWidth <= RNAConfig.mobileBreakpoint
+          ? RNAConfig.mobileGridSize
           : RNAConfig.desktopGridSize;
       }
 
@@ -425,4 +428,5 @@
     }, 'rna-container');
   </script>
 </body>
+
 </html>
